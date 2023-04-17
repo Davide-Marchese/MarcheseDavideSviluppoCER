@@ -43,7 +43,14 @@ Sistemi di gestione dell'energia, ossia software che consentono di monitorare e 
 Monitor di energia utilizzabili per monitorare il consumo di energia dell'intero impianto e identificare eventuali sprechi di energia. Possono essere utilizzati in combinazione con sensori di corrente e tensione per migliorare l'efficienza dell'impianto e identificare eventuali problemi.
 I dispositivi e sensori utilizzati per l’energy metering dell’impianto di produzione trasmetteranno dati in tempo reale ad un sistema di controllo centralizzato ed a un portale web per monitorare le prestazioni dell'impianto.
 Per l’implementazione del sistema di misurazione intelligente dell’energia presso le utenze della CER verrà fatto uso di contatori intelligenti che consentiranno di monitorare il consumo di energia elettrica di ogni edificio facente parte della comunità rilevando il flusso di energia e inviando i dati di consumo al sistema centrale che conterranno informazioni riguardanti il quantitativo di energia consumata in momenti del giorno diversi e in diversi giorni. Grazie a questi dispositivi sarà possibile monitorare il consumo energetico in tempo reale e visualizzare le informazioni tramite display e applicativi appositamente sviluppati, inviando notifiche all’utenza qualora il consumo superi una determinata soglia.
+Viene raggiunto in questo caso l’obiettivo della gestione dell’energia tramite l’utilizzo dei dispositivi di energy metering dell’impianto e dei contatori intelligenti delle utenze.
+La scalabilità della CER è garantita dall’ampio spazio disponibile per l’ampliamento delle centrali energetiche per via della morfologia del territorio.
 Al termine del primo sprint sarà possibile per tutti i membri della CER utilizzare energia proveniente dall’impianto fotovoltaico e utilizzare il portale web oppure l’applicazione mobile per monitorare la produzione e l’immissione di energia nella rete da parte dell’impianto, oltre che poter monitorare i consumi dell’abitazione o del posto di lavoro del singolo socio.
+Nelle prime fasi del progetto verrà implementato l’autoconsumo della comunità, quindi tutta l’elettricità consumata dalla comunità verrà prodotta esclusivamente dalle fonti messe a disposizione dei membri.
+Alla fine del primo sprint le entità avranno la seguente struttura:
+
+
+
 Seconda iterazione:
 Nella seconda iterazione prevista per lo sviluppo della CER, si procederà con l’installazione dell’impianto di produzione di energia a biomasse nelle vicinanze del centro urbano, in modo da poter sfruttare residui della lavorazione del legno provenienti dalle piccole e medie imprese presenti, oltre che scarti agricoli e rifiuti organici forniti direttamente dall’utenza della CER per la produzione di energia termica, permettendo di ottenere così un impianto funzionante in cui la fonte di approvvigionamento di biomasse corrisponde al centro di consumo.
 Per il sistema di energy metering dell’impianto a biomasse si potranno utilizzare dispositivi come:
@@ -59,6 +66,33 @@ Adattatori smart, anche questi da collegare tra la presa e l'elettrodomestico pe
 Interruttori smart per programmare l’accensione e lo spegnimento delle luci da applicazione oppure in base alla presenza di persone o meno.
 Sensori di corrente da installare sui cavi elettrici dell'elettrodomestico per la misurazione del consumo energetico.
 I sensori utilizzati per la misurazione dei consumi dei singoli dispositivi elettronici utilizzati negli edifici permetteranno agli utenti di accedere ai dati raccolti dal portale web e dall’applicazione in cui sarà mostrata una valutazione complessiva dei consumi oltre che ai consumi inerenti i singoli apparecchi.
+Il requisito funzionale fondamentale della CER, ossia quello della gestione dell’energia, viene raggiunto grazie all’utilizzo dei sensori progettati per il secondo sprint, che permettono di monitorare più nel dettaglio i consumi dei membri; l’ottimizzazione dell’energia per evitare la dipendenza da combustibili fossili viene rafforzata dall’aggiunta della centrale a biomasse che sfrutta materiale di scarto locale.
+Una funzionalità che sarà possibile utilizzare è quella di poter visualizzare il numero e i dati inerenti ogni singolo componente di una comunità energetica rinnovabile, che ora sarà scalabile e permetterà l’aggiunta di nuovi membri.
+Sarà possibile ottenere informazioni su ogni sensore che ciascun membro utilizza tramite una funzionalità apposita dell’applicazione progettata per la gestione e il monitoraggio della CER, permettendo una gestione ottimale dei consumi energetici e permettendo la progettazione di un sistema di condivisione energetico. Le entità, in cui PMI saranno fabbriche e uffici mentre i cittadini saranno singoli o nuclei familiari, saranno quindi così definite:
+
+
+Degli esempi di entità possono essere quelli di un ufficio, di una abitazione e di una fabbrica, i cui oggetti potrebbero avere i seguenti valori:
+ufficio:
+id=1
+partitaIva = ”33348960155”
+nome=”Ufficio X”
+sensori = {stampante3d, condizionatore, fornetto, computer}
+fabbrica:
+id=2
+partitaIva = ”79960330912”
+nome = ”Azienda Y”
+sensori={tornio, pressa, nastro}
+abitazione:
+id=3
+codiceFiscale = ”RSSMRA80A01L840J”
+nome=”Mario Rossi”
+sensori={contatore, lavatrice, lavastoviglie, asciugacapelli}
+
+Un esempio di sensore, come quello per una lavastoviglie, è il seguente:
+id = 1
+nome = “lavastoviglie”
+TIPO = “consumo elettrico”
+consumoMedio = 1,2 (kWh)
 
 CER: gli incentivi
 Gli incentivi previsti per lo sviluppo della CER riguardano l’energia prodotta e autoconsumata all’interno della comunità. Ogni partecipante continuerà a pagare la bolletta del proprio fornitore, ricevendo però un incentivo da parte del Gestore dei Servizi Energetici per l’autoconsumo. L’energia prodotta dall’impianto fotovoltaico e dall’impianto a biomasse verrà venduta al GSE al prezzo di 200 €/MWh. Oltre alla vendita dell’energia si otterrà un incentivo pari a 119 €/MWh
